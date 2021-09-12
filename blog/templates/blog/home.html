@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    {% for x in posts %}
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{x.author.profile.image.url}}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ x.author }}</a>
+              <small class="text-muted">{{ x.datePosted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ x.title }}</a></h2>
+            <p class="article-content">{{ x.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
